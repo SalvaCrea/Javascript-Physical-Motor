@@ -17,7 +17,7 @@ class ball
 	{
 
 		this.id = class_ball_manager.balls.length - 1;
-		this.pos_y = getRandomInt( 0, 100 );
+		this.pos_y = -30;
 		this.pos_x = getRandomInt( 0, ecran.width() );
 
 		this.speed_x = getRandomInt( 0, 0 );
