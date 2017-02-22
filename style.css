@@ -1,0 +1,45 @@
+body{
+  position : relative;
+  height: 100%;
+  width: 100%;
+  background: #e5edf3;
+  color : rgb(141,141,141);
+  font-family: arial;
+}
+.balls
+{
+  position: absolute;
+  z-index : 1;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: none;
+
+}
+.balls:hover
+{
+  opacity: 1 !important;
+  box-shadow: 0 0 6px rgba( 0, 0, 0, 0.5 );
+
+}
+.grounds
+{
+  position: absolute;
+  z-index : 1;
+  border-radius: 5%
+}
+#interface
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #ccc;
+  padding: 15px;
+  width: 100%;
+}
+#interface div
+{
+  float: left;
+  cursor: pointer;
+  padding: 7px;
+  margin: 7px;
+}

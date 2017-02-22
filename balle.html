@@ -1,0 +1,179 @@
+<html>
+	<head>
+		<script src='https://code.jquery.com/jquery-3.1.1.min.js'> </script>
+		<script>
+
+
+
+// function piqué sur internet pour avoir des chiffres aléatoires
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+ecran =
+{
+	width : $( window ).width(),
+	height : $( window ).height()
+}
+
+class ball
+{
+	constructor()
+	{
+		this.pos_x = 0;
+		this.pos_y = 0;
+		this.speed_x = 0;
+		this.speed_y = 0;
+		this.width = 30;
+		this.height = 30;
+		this.color = '000';
+		this.id = 0;
+		this.opacity = 1;
+	}
+	create()
+	{
+
+		this.id = class_ball_manager.balls.length - 1;
+		this.pos_y = getRandomInt( 0, ecran.height );
+		this.pos_x = getRandomInt( 0, ecran.width );
+
+		this.speed_x = getRandomInt( 0, 10 );
+		this.speed_y = getRandomInt( 0, 10 );
+
+		this.opacity = Math.random();
+
+		var size = getRandomInt( 5, 40 );
+		this.width = size;
+		this.height = size;
+
+		this.color = getRandomInt( 0, 999 );
+
+		// creation html
+		var $ball = $( '<div></div>' );
+		$ball = $ball.attr( 'id', this.id );
+		$ball = $ball.attr( 'class', 'balls' );
+
+		$ball = $ball.css({
+
+				'left' : 	this.pos_x,
+				'top' : 	this.pos_y,
+
+				'width' : this.width,
+				'height' : this.height,
+
+				'background' : '#' + this.color,
+
+				'opacity' :this.opacity
+
+		});
+
+		$( 'body' ).append( $ball );
+
+	}
+	move()
+	{
+			this.pos_y +=  this.speed_y;
+			this.pos_x +=  this.speed_x;
+
+			if( this.pos_x > ecran.width  || this.pos_x < 0 )
+			{
+				this.speed_x = this.speed_x - ( this.speed_x * 2 );
+				// perte de vitesse au rebond
+				//this.speed_x = this.speed_x - ( this.speed_x * 0.1 );
+			}
+
+			if( this.pos_y > ecran.height || this.pos_y < 0 )
+			{
+				this.speed_y = this.speed_y - ( this.speed_y * 2 );
+				// perte de vitesse au rebond
+				//this.speed_y = this.speed_y - ( this.speed_y * 0.1 );
+			}
+
+			$( '#' + this.id ).css({
+				'left' : 	this.pos_x,
+				'top' : 	this.pos_y
+			});
+
+	}
+}
+
+class_ball_manager = {
+
+		time : 0,
+		balls : new Array(),
+		frequence_create : 50,
+		last_create : 0,
+		frequence : 1000/25,
+
+		max_ball : 6000,
+
+		core : setInterval( "class_ball_manager.run()" , this.frequence ),
+		stop : function()
+		{
+			clearInterval( this.core );
+		},
+		run : function()
+		{
+
+
+				this.last_create += this.frequence;
+				this.time  += this.frequence;
+
+				if( this.last_create > this.frequence_create && this.balls.length < this.max_ball )
+				{
+
+					 this.last_create = 0;
+
+					 elem = new ball;
+					 elem.create();
+
+					 this.balls.push( elem );
+
+				}
+
+
+				this.balls.forEach(function( elem )
+				{
+					elem.move();
+				});
+
+		}
+
+
+}
+
+
+class_ball_manager.core;
+
+		</script>
+		<style>
+			body{
+				position : relative;
+				height: 100%;
+				width: 100%;
+				background: #e5edf3;
+			}
+			.balls
+			{
+				position: absolute;
+				z-index : 1;
+				border-radius: 50%;
+				cursor: pointer;
+				box-shadow: none;
+
+			}
+			.balls:hover
+			{
+				opacity: 1 !important;
+				box-shadow: 0 0 6px rgba( 0, 0, 0, 0.5 );
+
+			}
+		</style>
+	</head>
+	<body>
+
+	</body>
+</html>
