@@ -2,9 +2,17 @@
 //  The world that contain elements
 ///////////////////////////////////
 
-// @param name string - The name of material
+// @param name string - The name of the world
 
-// @param color string - The color of the material in hexadecimal
+// @param color string - The color of the world in hexadecimal
+
+// @param gravity float  - The gravity exerce in the world
+
+// @param fresh_air float  - The fresh air in the world
+
+// @param width float  - The width of the world
+
+// @param height  float  - The height of the world
 
 class world
 {
@@ -22,6 +30,6 @@ class world
     this.width = $( window ).width();
 
     this.width = $( window ).height();
-    
+
   }
 }
