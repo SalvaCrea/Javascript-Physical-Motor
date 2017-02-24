@@ -27,8 +27,8 @@ class ground_manager
         argsContent.pos_a_x = this.grounds[ this.grounds.length - 1 ].pos_b_x;
         argsContent.pos_a_y = this.grounds[ this.grounds.length - 1 ].pos_b_y;
 
-        argsContent.pos_b_x =  getRandomInt( argsContent.pos_a_x + 1 , argsContent.pos_a_x + 10 );
-        argsContent.pos_b_y =  getRandomInt( argsContent.pos_a_y + 1 , argsContent.pos_a_y + 10 );
+        argsContent.pos_b_x =  getRandomInt( argsContent.pos_a_x + 1 , argsContent.pos_a_x + 6 );
+        argsContent.pos_b_y =  getRandomInt( argsContent.pos_a_y + 1 , argsContent.pos_a_y + 6 );
 
       }
 

@@ -44,7 +44,7 @@ class ball
 				'width' : this.width,
 				'height' : this.height,
 
-				'background' : '#' + this.color,
+				'background' : 'blue',
 
 				'opacity' :this.opacity
 
