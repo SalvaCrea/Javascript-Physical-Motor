@@ -1,0 +1,21 @@
+{
+  "name": "atom",
+  "version": "1.0.0",
+  "description": "the world of the atom",
+  "main": "class_ball.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salva91/javascript_ball.git"
+  },
+  "author": "Salvador Cardona",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salva91/javascript_ball/issues"
+  },
+  "homepage": "https://github.com/salva91/javascript_ball#readme"
+}

@@ -6,6 +6,10 @@ body{
   color : rgb(141,141,141);
   font-family: arial;
 }
+.world
+{
+  position: absolute;
+}
 .balls
 {
   position: absolute;

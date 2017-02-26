@@ -18,7 +18,7 @@
 
 // @param repulsion float - the repulsion beetween element
 
-// @param attraction float -The deformation by the temperature
+// @param dilation float -The deformation by the temperature
 
 class material
 {
@@ -27,7 +27,7 @@ class material
 
     this.name = 'default';
 
-    this.color = '#111';
+    this.color = '#a2bae0';
 
     this.opacity = 0.9;
 
@@ -35,7 +35,7 @@ class material
 
     this.magnetic = 0;
 
-    this.resilience = 0;
+    this.resilience = 0.9;
 
     this.attraction = 0;
 
@@ -43,5 +43,6 @@ class material
 
     this.dilation = 1;
 
+		return this;
   }
 }
