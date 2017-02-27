@@ -15,9 +15,10 @@
 ///////////////////////////////////////////////////////
 
 class element {
+
     constructor() {
 						this.id = 'undefined';
-            this.type = 'circle';
+            this.type = 'undefined';
             this.pos_x = 0;
             this.pos_y = 0;
             this.speed_x = 0;
@@ -41,6 +42,7 @@ class element {
 				id : this.id,
 				class : this.type,
 
+
 			}).css({
 				position : 'absolute',
 				width : this.width,
@@ -50,19 +52,6 @@ class element {
 
 			$( '#world' ).append( $element );
 
-			var centerX = this.width / 2;
-			var centerY = this.height / 2;
-			var radius = this.width;
-
-			var context = document.getElementById( this.id ).getContext('2d');
-			context.beginPath();
-			context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-			context.fillStyle = this.material.color;
-			context.fill();
-			context.lineWidth = 5;
-			context.strokeStyle = this.material.color;
-			context.stroke();
-
 		}
 		remove()
 		{
@@ -70,7 +59,7 @@ class element {
 		}
 		render()
 		{
-			console.log(this.id)
+
 			$( '#' + this.id ).css({
 
 					'left' : this.pos_x,

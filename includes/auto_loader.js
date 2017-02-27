@@ -27,8 +27,16 @@ ListLink = [
 			src : './includes/class_element.js',
 	},
 	{
+			name : 'extend_element_circle',
+			src : './includes/elements/circle.js',
+	},
+	{
 			name : 'class_material',
 			src : './includes/class_material.js',
+	},
+	{
+			name : 'class_material_default',
+			src : './includes/materials/default.js',
 	},
 	{
 			name : 'class_render.js',

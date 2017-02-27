@@ -121,19 +121,14 @@ class world_atom
 
     if ( !elem.material )
     {
-      elem.material = 'default';
+      elem.material = 'basic';
     }
 
-      var curent_element = this.list_element.find( function( query ){
-                             return query.type === elem.type;
-                          });
-
+      var curent_element = eval("new " + elem.type + "()");
 
       curent_element = Object.assign( curent_element, elem);
 
-      curent_element.material = this.list_material.find( function( query ){
-                             return query.name === elem.material;
-                          });
+      curent_element.material = eval("new " + elem.material + "()");
 
       curent_element.id = this.element_created;
 

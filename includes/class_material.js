@@ -25,24 +25,23 @@ class material
   constructor()
   {
 
-    this.name = 'default';
+    this.name = 'undefined';
 
-    this.color = '#a2bae0';
+    this.color = '#000';
 
-    this.opacity = 0.9;
+    this.opacity = 0;
 
-    this.mass = 1;
+    this.mass = 0;
 
     this.magnetic = 0;
 
-    this.resilience = 0.9;
+    this.resilience = 0;
 
     this.attraction = 0;
 
     this.attraction = 0;
 
-    this.dilation = 1;
+    this.dilation = 0;
 
-		return this;
   }
 }

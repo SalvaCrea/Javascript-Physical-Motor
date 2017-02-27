@@ -4,7 +4,9 @@
   "description": "the world of the atom",
   "main": "class_ball.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-livereload": "^3.8.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
