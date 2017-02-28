@@ -41,7 +41,7 @@ class world_atom
 
     this.name = 'The world';
 
-    this.background_color = '#f1baf4';
+    this.background_color = '#D7EEFF';
 
     this.gravity = 10;
 
@@ -55,6 +55,7 @@ class world_atom
     this.list_element = new Array();
     this.list_element.push( new element );
 
+		// list elements in the world
 		this.elements = new Array();
     this.element_created = 0;
 
@@ -65,7 +66,7 @@ class world_atom
     // create the first material by default
     this.collision = new collision();
 
-		this.frequence = 3;
+		this.frequence = 30;
 
 		this.time = 0;
 
@@ -132,11 +133,13 @@ class world_atom
 
       curent_element.id = this.element_created;
 
+			curent_element.world = this;
+
       curent_element.create();
 
       this.element_created++;
 
-      this.list_element.push( curent_element );
+      this.elements.push( curent_element );
 
   }
   add_material( elem )
@@ -154,8 +157,8 @@ class world_atom
 
       this.time_manager();
 
-      this.list_element.forEach( function( elem ){
-            elem.core( this );
+      this.elements.forEach( function( elem ){
+            elem.core();
       });
 	}
   // permet de gérer le temps

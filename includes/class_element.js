@@ -12,6 +12,7 @@
 // @param width float - the width of the element
 // @param materiel object - the constitution elemental
 // @param created boolean - if the eleme is created in the dom
+// @param world obect - it the current world
 ///////////////////////////////////////////////////////
 
 class element {
@@ -28,9 +29,12 @@ class element {
             this.temperature = 0;
             this.material = new Object();
 						this.created = false;
+						this.world = new Object();
         }
 		core( world )
 		{
+				this.collision();
+				this.move();
 				this.render();
 		}
 		create()
@@ -67,6 +71,25 @@ class element {
 
 			});
 
+		}
+		collision()
+		{
+
+		}
+		move()
+		{
+				this.pos_x += this.speed_x;
+				this.pos_y += this.speed_y;
+		}
+		// return for get the weight
+		weight()
+		{
+				return this.world.gravity * this.material.mass;
+		}
+		// return the energy
+		energy()
+		{
+				return this.weight() * this.speed();
 		}
     // return the somme of height and width
     size() {
