@@ -27,8 +27,8 @@ class circle extends element {
     			$( '#world' ).append( $element );
 
     			var centerX = this.radius();
-    			var centerY = this.radius();
-    			var radius = this.radius();
+    			var centerY = this.width / 2;
+    			var radius = this.width / 2;
 
     			var context = document.getElementById( this.id ).getContext('2d');
 
@@ -51,25 +51,20 @@ class circle extends element {
 				{
 					var a = new Object();
 					var current_elem = this;
-					this.world.elements.forEach( function( eleme )
+					this.world.elements.forEach( function( elem )
 					{
-						if ( current_elem.id != eleme.id ) {
+						if ( current_elem.id != elem.id ) {
 
 
 							a = collision_sharpe(
-								current_elem.pos_x + current_elem.width/2,
-								current_elem.pos_y + current_elem.width/2,
-								eleme.pos_x + eleme.width/2,
-								eleme.pos_y + eleme.width/2 );
+								current_elem.pos_center().x,
+								current_elem.pos_center().y,
+								elem.pos_center().x,
+								elem.pos_center().y );
 
-								if ( a.hyp < ( current_elem.radius() ) + ( eleme.radius() ) ) {
-
-
-										current_elem.speed_x = -current_elem.speed_x;
-										eleme.speed_x = -eleme.speed_x;
-
-										current_elem.speed_y = -current_elem.speed_y;
-										eleme.speed_y = -eleme.speed_y;
+								if ( a.hyp < ( current_elem.radius() ) + ( elem.radius() ) ) {
+										current_elem.query.css({background:'red'});
+										elem.query.css({background:'blue'});
 								}
 
 						}

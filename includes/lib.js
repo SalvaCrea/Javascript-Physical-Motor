@@ -34,7 +34,7 @@ function collision_sharpe( pos_a_x, pos_a_y, pos_b_x, pos_b_y )
 		 // tangeante
 		 sharpe.tan = convert_rad_deg( Math.tan( sharpe.a / sharpe.b ) );
 		 // cosinus
-		 sharpe.cos = convert_rad_deg( Math.acos( sharpe.a /  sharpe.hyp ) );
+		 sharpe.cos = convert_rad_deg( Math.cos( sharpe.a /  sharpe.hyp ) );
 		 // sinus
 		 sharpe.sin = convert_rad_deg( Math.sin( sharpe.b /  sharpe.hyp ) );
 

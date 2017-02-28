@@ -6,7 +6,7 @@
 		world.start();
 
 
-		for (var i = 0; i < 60; i++) {
+		for (var i = 0; i < 30; i++) {
 			var elem = new Object();
 
 			elem.pos_y = getRandomInt(0, 1000);
