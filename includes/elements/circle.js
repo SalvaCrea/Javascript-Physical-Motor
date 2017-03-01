@@ -63,6 +63,13 @@ class circle extends element {
 								elem.pos_center().y );
 
 								if ( a.hyp < ( current_elem.radius() ) + ( elem.radius() ) ) {
+
+										console.log('collision');
+										console.log(a);
+										console.log(current_elem);
+										console.log(current_elem.pos_center());
+										console.log(elem );
+										console.log(elem.pos_center());
 										current_elem.query.css({background:'red'});
 										elem.query.css({background:'blue'});
 								}
