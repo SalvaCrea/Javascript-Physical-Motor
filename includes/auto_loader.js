@@ -19,6 +19,18 @@ ListLink = [
 			src : './bower_components/jquery/dist/jquery.min.js',
 	},
 	{
+			name : 'jCanvas',
+			src : './bower_components/jcanvas/jcanvas.min.js',
+	},
+	{
+			name : 'angular',
+			src : './bower_components/angular/angular.min.js',
+	},
+	{
+			name : 'interface',
+			src : './includes/class_interface.js',
+	},
+	{
 			name : 'class_collision',
 			src : './includes/class_collision.js',
 	},
@@ -37,10 +49,6 @@ ListLink = [
 	{
 			name : 'class_material_default',
 			src : './includes/materials/default.js',
-	},
-	{
-			name : 'class_render.js',
-			src : './includes/class_render.js',
 	},
 	{
 			name : 'class_world',

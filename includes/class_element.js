@@ -36,6 +36,10 @@ class element {
 				this.collision();
 				this.move();
 				this.render();
+
+				if ( this.world.dev_mode ) {
+						this.dev_mode_function();
+				}
 		}
 		create()
 		{
@@ -105,4 +109,5 @@ class element {
         return (this.pos_x + this.width() / 2) + (this.pos_y + this.heigth() / 2);
     }
     change_temperature() {}
+		dev_mode_function(){}
 }

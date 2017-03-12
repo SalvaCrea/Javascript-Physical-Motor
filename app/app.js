@@ -1,6 +1,8 @@
 
 		var world = new world_atom();
 
+		world.dev_mode = true;
+		
 		world.create();
 
 		world.start();

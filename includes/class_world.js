@@ -24,6 +24,8 @@
 //
 // @param frequence  int  - THe frequence of execution of the world
 //
+// @param dev_mode  boolean  - The function only dev
+//
 // @param render object - the motor of render
 //
 // @param collision object - the motor of collision
@@ -68,7 +70,11 @@ class world_atom
 
 		this.frequence = 30;
 
+		this.dev_mode = false;
+
 		this.time = 0;
+
+		this.interface = new ui_interface();
 
   }
 	// create the world
