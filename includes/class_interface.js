@@ -10,6 +10,8 @@ class ui_interface {
 				this.query = new Object()
 				this.create();
 
+        $( 'body' ).on( 'click', '.circle', this.select_sharpe);
+
         }
 		create()
 		{
@@ -20,5 +22,9 @@ class ui_interface {
 
 				$('body').append( $content );
 		}
+    select_sharpe()
+    {
+        alert('test');
+    }
 
 }

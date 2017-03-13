@@ -75,6 +75,7 @@ class world_atom
 		this.time = 0;
 
 		this.interface = new ui_interface();
+    this.interface.world = this;
 
   }
 	// create the world
